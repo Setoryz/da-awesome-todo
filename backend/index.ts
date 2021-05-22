@@ -7,7 +7,7 @@ const PORT = 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => res.send("Express + TypeScript Server"));
+app.get("/", (req, res) => res.send("Welcome to Todos Server"));
 app.use("/todos", todosRoutes);
 
 app.listen(PORT, () => {
