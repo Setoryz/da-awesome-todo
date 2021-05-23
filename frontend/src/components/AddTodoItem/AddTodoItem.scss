@@ -1,0 +1,18 @@
+@import "../../variables";
+.addTodoItem {
+  @include flex-center;
+  height: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  border-radius: 2rem;
+  background-color: $add-item-background-color;
+  color: $add-item-color;
+
+  cursor: pointer;
+
+  & svg {
+    width: 2rem;
+    fill: $add-item-color;
+  }
+}
