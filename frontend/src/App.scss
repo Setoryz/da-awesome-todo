@@ -1,0 +1,15 @@
+@import "variables";
+.App {
+  background-color: $background-color;
+
+  & header {
+    width: 100%;
+    text-align: center;
+
+    & h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
