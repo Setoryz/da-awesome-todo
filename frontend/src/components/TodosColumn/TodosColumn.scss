@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.todos__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid $text-color;
+
+  &.last {
+    border-right: none;
+  }
+
+  & .top__row {
+    height: 2rem;
+    width: 100%;
+  }
+  & .todos__row {
+    @include flex-center;
+
+    height: 5rem;
+    width: 100%;
+    border-top: 1px solid $text-color;
+  }
+}
