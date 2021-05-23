@@ -18,22 +18,22 @@ const TodoCalendar = () => {
       </div>
       <div className="todo__calendar">
         <div className="calendar__btn">
-          <button
+          <div
             className="btn__prev"
             onClick={() => {
               setStartDate((currentStartDate) => addDays(currentStartDate, -7));
             }}
           >
             ◀
-          </button>
-          <button
+          </div>
+          <div
             className="btn__next"
             onClick={() => {
               setStartDate((currentStartDate) => addDays(currentStartDate, 7));
             }}
           >
             ▶
-          </button>
+          </div>
         </div>
         <div className="calendar__container">
           {[...Array(7)].map((value, index) => (
