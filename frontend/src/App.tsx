@@ -19,10 +19,6 @@ function App() {
     return () => {};
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log(state.todos);
-    return () => {};
-  }, [state]);
   return (
     <div className="App">
       {/* Title */}
