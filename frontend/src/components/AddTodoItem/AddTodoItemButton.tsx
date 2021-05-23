@@ -1,5 +1,5 @@
 import AddIcon from "../icons/AddIcon";
-import "./AddTodoItem.scss";
+import "./AddTodoItemButton.scss";
 
 const AddTodoItem = () => {
   return (

@@ -8,11 +8,22 @@
   border-radius: 2rem;
   background-color: $add-item-background-color;
   color: $add-item-color;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 
   cursor: pointer;
 
   & svg {
     width: 2rem;
     fill: $add-item-color;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &:hover {
+    background-color: $add-item-color;
+    color: $add-item-background-color;
+
+    & svg {
+      fill: $add-item-background-color;
+    }
   }
 }
