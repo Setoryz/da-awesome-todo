@@ -10,7 +10,6 @@ type Props = {
   todos: Todos;
 };
 const TodosColumn = ({ columnDate, todos }: Props) => {
-  useEffect(() => {}, [columnDate, todos]);
   return (
     <div
       className={`todos__column ${getDay(columnDate) === 6 ? "last" : ""} ${
