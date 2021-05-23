@@ -1,7 +1,45 @@
-.todo__calendar {
-  display: flex;
+@import "../../variables";
 
-  & .todo__calendar__column {
-    flex: calc(1 / 7);
+.todo__calendar {
+  & .calendar__btn {
+    top: 2rem;
+    box-sizing: border-box;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & .btn__prev,
+    & .btn__next {
+      @include flex-center;
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 1.75rem;
+      border: none;
+
+      color: $background-color;
+      border-radius: 3.5rem;
+      background-color: $accent-color;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: $background-color;
+        color: $accent-color;
+        box-shadow: rgba(30, 58, 138, 0.35) 0px 5px 15px;
+      }
+    }
+  }
+
+  .calendar__container {
+    display: flex;
+
+    & .calendar__column {
+      flex: calc(1 / 7);
+    }
   }
 }
