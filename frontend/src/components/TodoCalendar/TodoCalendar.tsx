@@ -51,13 +51,13 @@ export default TodoCalendar;
 const todos: Todos = [
   {
     title: "Work on Frontend",
-    date: new Date("2021/5/21"),
+    date: new Date("2021/5/24"),
     status: "done",
     id: "7fb45c449d49",
   },
   {
     title: "Handle CI & CD",
-    date: new Date("2021/5/21"),
+    date: new Date("2021/5/24"),
     status: "todo",
     id: "bb24",
   },
@@ -69,7 +69,7 @@ const todos: Todos = [
   },
   {
     title: "Add New Backend",
-    date: new Date("2021/5/22"),
+    date: new Date("2021/5/25"),
     status: "doing",
     id: "e0923c40-bb2b-11eb-8ae2-210f80351355",
   },

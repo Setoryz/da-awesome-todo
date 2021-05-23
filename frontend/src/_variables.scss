@@ -1,6 +1,10 @@
 $background-color: #ffffff;
 $text-color: #1e3a8a;
 $accent-color: #2563eb;
+$accent-color-50: #eff6ff;
+$accent-color-100: #dbeafe;
+$add-item-background-color: #fde68a;
+$add-item-color: #78350f;
 
 @mixin flex-center {
   display: flex;

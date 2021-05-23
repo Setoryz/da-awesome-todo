@@ -1,5 +1,7 @@
 import { getDay, isToday } from "date-fns";
 import { useEffect } from "react";
+import AddTodoItem from "../AddTodoItem/AddTodoItem";
+import TodoItem from "../TodoItem/TodoItem";
 import { Todos } from "../types";
 import "./TodosColumn.scss";
 
@@ -19,8 +21,8 @@ const TodosColumn = ({ columnDate, todos }: Props) => {
       {[...Array(todos.length >= 7 ? todos.length + 1 : 7)].map(
         (value, index) => (
           <div key={index} className="todos__row">
-            {todos[index] && <p>{todos[index].title}</p>}
-            {index === todos.length && <p>New Item ➕</p>}
+            {todos[index] && <TodoItem todoItem={todos[index]} />}
+            {index === todos.length && <AddTodoItem />}
           </div>
         )
       )}

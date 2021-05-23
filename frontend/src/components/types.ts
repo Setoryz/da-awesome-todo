@@ -1,4 +1,4 @@
-type TodoData = {
+export type TodoData = {
   title: string;
   date: Date;
   status: "todo" | "done" | "doing";
