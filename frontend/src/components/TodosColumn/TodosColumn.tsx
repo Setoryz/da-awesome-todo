@@ -1,5 +1,4 @@
 import { getDay, isToday } from "date-fns";
-import { useEffect } from "react";
 import AddTodoItemButton from "../AddTodoItem/AddTodoItemButton";
 import TodoItem from "../TodoItem/TodoItem";
 import { Todos } from "../types";

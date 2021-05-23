@@ -41,9 +41,13 @@ const TodoCalendar = () => {
               <TodoCalendarDate columnDate={addDays(startDate, index)} />
               <TodosColumn
                 columnDate={addDays(startDate, index)}
-                todos={state.todos.filter(({ date }) =>
-                  isSameDay(new Date(date), addDays(startDate, index))
-                )}
+                todos={state.todos
+                  .filter(({ date }) =>
+                    isSameDay(new Date(date), addDays(startDate, index))
+                  )
+                  .sort((a, b) =>
+                    b.status < a.status ? -1 : a.status > b.status ? 1 : 0
+                  )}
               />
             </div>
           ))}
