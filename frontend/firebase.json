@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "build",
+    "site": "da-awesome-todo",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
