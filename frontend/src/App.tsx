@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import "./App.scss";
 import AddTodoItem from "./components/AddTodoItem/AddTodoItem";
 import TodoCalendar from "./components/TodoCalendar";
+import { API_BASE_URL } from "./constants";
 import { useStateValue } from "./context/StateProvider";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/todos")
+      .get(API_BASE_URL)
       .then((response) => {
         dispatch({ type: "GET_TODO", todos: response.data });
       })

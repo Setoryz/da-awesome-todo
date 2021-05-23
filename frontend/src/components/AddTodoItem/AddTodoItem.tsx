@@ -1,6 +1,7 @@
 import axios from "axios";
 import { format } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
+import { API_BASE_URL } from "../../constants";
 import { useStateValue } from "../../context/StateProvider";
 import "./AddTodoItem.scss";
 
@@ -35,7 +36,7 @@ const AddTodoItem = () => {
       titleInputRef.current!.focus();
     } else {
       axios
-        .post("http://localhost:5000/todos", { title, date, status: "todo" })
+        .post(API_BASE_URL, { title, date, status: "todo" })
         .then((response) =>
           dispatch({ type: "ADD_TODO", todos: response.data })
         )
