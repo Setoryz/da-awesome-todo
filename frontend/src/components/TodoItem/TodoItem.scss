@@ -21,7 +21,9 @@
   }
   margin: 0.5rem;
   @include flex-center;
+  justify-content: space-between;
   height: clamp(3rem, 100%, 4rem);
+  width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
 

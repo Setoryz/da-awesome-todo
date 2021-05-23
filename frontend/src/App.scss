@@ -4,12 +4,22 @@
 
   & header {
     width: 100%;
+    @include flex-center;
     text-align: center;
 
     & h1 {
       font-size: 3rem;
       font-weight: 700;
       text-transform: uppercase;
+
+      @media (max-width: 48rem) {
+        font-size: 2.5rem;
+        max-width: 70%;
+      }
+
+      @media (max-width: 30rem) {
+        font-size: 2rem;
+      }
     }
   }
 }
