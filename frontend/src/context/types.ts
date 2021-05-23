@@ -1,9 +1,10 @@
-import { TodoData, Todos } from "../components/types";
+import { Todos } from "../components/types";
 import { ADD_TODO, GET_TODOS, OPEN_ADD_TODO } from "./reducer";
 
+type OpenAddTodo = { open: boolean; date?: Date };
 export type TodosState = {
   todos: Todos;
-  openAddTodo: boolean;
+  openAddTodo: OpenAddTodo;
 };
 
 interface GetTodosAction {
@@ -12,11 +13,11 @@ interface GetTodosAction {
 }
 interface OpenAddTodoAction {
   type: typeof OPEN_ADD_TODO;
-  openAddTodo: boolean;
+  openAddTodo: OpenAddTodo;
 }
 interface AddTodoAction {
   type: typeof ADD_TODO;
-  todoItem: TodoData;
+  todos: Todos;
 }
 
 export type TodosStateActionTypes =

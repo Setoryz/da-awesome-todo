@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import "./App.scss";
+import AddTodoItem from "./components/AddTodoItem/AddTodoItem";
 import TodoCalendar from "./components/TodoCalendar";
 import { useStateValue } from "./context/StateProvider";
 
@@ -8,14 +9,18 @@ function App() {
   const { state, dispatch } = useStateValue();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/todos").then((response) => {
-      dispatch({ type: "GET_TODO", todos: response.data });
-    });
+    axios
+      .get("http://localhost:5000/todos")
+      .then((response) => {
+        dispatch({ type: "GET_TODO", todos: response.data });
+      })
+      .catch((err) => console.warn(err.message));
     return () => {};
   }, [dispatch]);
 
   useEffect(() => {
-    console.log(state);
+    console.log(state.todos);
+    return () => {};
   }, [state]);
   return (
     <div className="App">
@@ -25,8 +30,8 @@ function App() {
       </header>
 
       {/* calendar - week view */}
-      <TodoCalendar></TodoCalendar>
-      {/* calendar data */}
+      <TodoCalendar />
+      {state.openAddTodo.open && <AddTodoItem />}
     </div>
   );
 }

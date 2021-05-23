@@ -6,7 +6,7 @@ export const GET_TODOS = "GET_TODO";
 
 export const initialState: TodosState = {
   todos: [],
-  openAddTodo: false,
+  openAddTodo: { open: false },
 };
 
 const reducer: TodosReducer = (state, action) => {
@@ -16,10 +16,10 @@ const reducer: TodosReducer = (state, action) => {
       return { ...state, todos: action.todos };
     // OPEN ADD TODOS
     case OPEN_ADD_TODO:
-      return state;
+      return { ...state, openAddTodo: action.openAddTodo };
     // ADD TODO
     case ADD_TODO:
-      return state;
+      return { ...state, openAddTodo: { open: false }, todos: action.todos };
     default:
       return state;
   }

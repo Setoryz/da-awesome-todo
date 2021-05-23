@@ -1,6 +1,6 @@
 import { getDay, isToday } from "date-fns";
 import { useEffect } from "react";
-import AddTodoItem from "../AddTodoItem/AddTodoItem";
+import AddTodoItemButton from "../AddTodoItem/AddTodoItemButton";
 import TodoItem from "../TodoItem/TodoItem";
 import { Todos } from "../types";
 import "./TodosColumn.scss";
@@ -22,7 +22,7 @@ const TodosColumn = ({ columnDate, todos }: Props) => {
         (value, index) => (
           <div key={index} className="todos__row">
             {todos[index] && <TodoItem todoItem={todos[index]} />}
-            {index === todos.length && <AddTodoItem />}
+            {index === todos.length && <AddTodoItemButton date={columnDate} />}
           </div>
         )
       )}
