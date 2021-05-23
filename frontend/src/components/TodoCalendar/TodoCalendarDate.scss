@@ -1,0 +1,36 @@
+@import "../../variables";
+
+.date__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.today {
+    & .calendar__day {
+      color: $accent-color;
+    }
+
+    & .calendar__date {
+      color: $background-color;
+      border-radius: 50%;
+      //   padding: 0 0.5rem;
+      background-color: $accent-color;
+    }
+  }
+
+  & .calendar__day {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  & .calendar__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+}
