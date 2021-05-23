@@ -1,5 +1,5 @@
 import axios from "axios";
-import { format } from "date-fns";
+import { format, isAfter, isThisWeek } from "date-fns";
 import React, { useEffect, useRef, useState } from "react";
 import { API_BASE_URL } from "../../constants";
 import { useStateValue } from "../../context/StateProvider";
@@ -13,6 +13,7 @@ const AddTodoItem = () => {
   const [title, setTitle] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [date, setDate] = useState(openAddTodo.date ?? new Date());
+  const [dateError, setDateError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const titleInputRef = useRef<HTMLInputElement>(null);
 
@@ -34,6 +35,8 @@ const AddTodoItem = () => {
     if (!title) {
       setTitleError(true);
       titleInputRef.current!.focus();
+    } else if (!isThisWeek(date) || !isAfter(date, new Date())) {
+      setDateError(true);
     } else {
       axios
         .post(API_BASE_URL, { title, date, status: "todo" })
@@ -57,7 +60,7 @@ const AddTodoItem = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
-          className="form__date"
+          className={`form__date ${dateError ? "error" : ""}`}
           type="date"
           value={format(date, "yyyy-MM-dd")}
           name="date"
