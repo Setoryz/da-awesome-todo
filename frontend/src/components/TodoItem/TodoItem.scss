@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.todoItem {
+  &.done {
+    color: #ecfdf5;
+    border-color: #064e3b;
+    background-color: #059669;
+
+    & svg {
+      fill: #ecfdf5;
+    }
+  }
+  &.doing {
+    color: #064e3b;
+    border-color: #059669;
+    background-color: #d1fae5;
+
+    & svg {
+      fill: #064e3b;
+    }
+  }
+  margin: 0.5rem;
+  @include flex-center;
+  height: clamp(3rem, 100%, 4rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  border-radius: 2rem;
+
+  background-color: $accent-color-100;
+  color: $text-color;
+
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  & .todoItem__title {
+    text-align: center;
+  }
+  & svg {
+    cursor: pointer;
+    flex: auto;
+    min-width: 1.75rem;
+    fill: $text-color;
+
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .todoItem__delete svg:hover {
+    fill: #ef4444;
+    outline: $background-color;
+  }
+
+  &:hover {
+    border: none;
+    box-shadow: rgba(30, 58, 138, 0.3) 0px 5px 15px;
+    &.done,
+    &.doing {
+      box-shadow: rgba(6, 78, 59, 0.3) 0px 5px 15px;
+    }
+  }
+}
