@@ -19,7 +19,6 @@ export const addTodo: RequestHandler = async (req, res) => {
     let newTodo = req.body;
     newTodo.id = id;
     data.push(newTodo);
-    console.log(data);
     await writeFile(JSON.stringify(data));
     res.send(data);
   } catch (error) {
