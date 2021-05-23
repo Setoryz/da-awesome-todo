@@ -1,0 +1,7 @@
+.todo__calendar {
+  display: flex;
+
+  & .todo__calendar__column {
+    flex: calc(1 / 7);
+  }
+}
